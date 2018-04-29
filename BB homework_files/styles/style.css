@@ -2,3 +2,16 @@ img {
 width: 23%;
 height: 200px;
 }
+
+form {
+  padding: 0 0 20px;
+}
+
+input#new-hero-name {
+  display: block;
+  width: 478px;
+  border-radius: 3px;
+  border: 1px solid #e6e6e6;
+  padding: 10px;
+  font-size: 18px;
+}

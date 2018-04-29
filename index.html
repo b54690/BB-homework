@@ -10,12 +10,16 @@
     <body>
         <h1>Good luck! You can do it!</h1>
     <div class="image-links">
-        <a href="#" onclick="rest(hero); return false"><img src="BB homework_files/images/Pub.williams.arp.750pix.jpg"></a>
-        <a href="#" onclick="pickUpItem(hero, {type: 'sword', damage:'80'}); return false"><img src="BB homework_files/images/sword.jpg"></a>
-        <a href="#" onclick="doBattle(hero, {health: 67, weapon: {type: 'Slap', damage: 67}}); return false"><img src="BB homework_files/images/enemy.jpeg"></a>
-        <a href="#" onclick="equipWeapon(hero, window.prompt('Which weapon would you like to equip?')); return false"><img src="BB homework_files/images/backpack.jpeg"></a>
+        <a href="#" onclick="rest(hero); updateStats(); return false"><img src="BB homework_files/images/Pub.williams.arp.750pix.jpg"></a>
+        <a href="#" onclick="pickUpItem(hero, {type: 'sword', damage:'80'}); updateStats(); return false"><img src="BB homework_files/images/sword.jpg"></a>
+        <a href="#" onclick="doBattle(hero, {health: 67, weapon: {type: 'Slap', damage: 67}}); updateStats(); return false"><img src="BB homework_files/images/enemy.jpeg"></a>
+        <a href="#" onclick="equipWeapon(hero, window.prompt('Which weapon would you like to equip?')); updateStats(); return false"><img src="BB homework_files/images/backpack.jpeg"></a>
     </div>
     <div id="stats"></div>
+    <div id="invent"></div>
+    <form onsubmit="submitNameChange(); return false">
+      <input type="text" id="new-hero-name" placeholder="Which hero's name would you like to change?">
+    </form>
         <script src="your_javascript_here.js"></script>
         <script src="tests.js"></script>
     </body>

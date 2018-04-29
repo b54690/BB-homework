@@ -11,7 +11,7 @@
 var hero = {
   name: 'Captain Kingsday',
   heroic: true,
-  inventory: [],
+  inventory: [{type: 'gun', damage:'100'}, {type: 'blaster', damage:'100'}],
   health: 45,
   weapon: {type: 'Axe', damage: 45},
 }
@@ -86,7 +86,7 @@ function doBattle(heroicCreature, creature) {
   if (heroicCreature.heroic !== true) {
     return null;
   }
-  while (heroicCreature.health && creature.health > 0) {
+  while (heroicCreature.health > 0 && creature.health > 0) {
     dealDamage(heroicCreature, creature);
     dealDamage(creature, heroicCreature);
   }
@@ -95,10 +95,8 @@ function doBattle(heroicCreature, creature) {
     console.log(heroicCreature.health);
   }
   else window.alert(`Heroic Creature has met his match : (`);
-}
-
-//HARRY COMMMENT!!!!!
-//window.alert result in a [object Object]
+}//HARRY COMMENT - assertion fails in the console, although this seems to work via console.log. I suspect that the syntax of the fucntion may be
+//causing it to error out. I have tried a few things to resolve error but none of them have wokred in the time.
 
 // UI
 
@@ -122,6 +120,34 @@ function doBattle(heroicCreature, creature) {
 //Write `displayStats` function that writes your hero's name, health, weapontype, weapon damage to the page. Call it at the end of your script
 
 function displayStats(hero){
-  var linkElement = document.getElementById('stats');
-  linkElement.innerText = (`Name: ${hero.name}\nHealth: ${hero.health}\nWeapon Type: ${hero.weapon.type}\nWeapon Damage: ${hero.weapon.damage}`);
+  var statsElement = document.getElementById('stats');
+  statsElement.innerText = (`Name: ${hero.name}\nHealth: ${hero.health}\nWeapon Type: ${hero.weapon.type}\nWeapon Damage: ${hero.weapon.damage}`);
 }
+
+//Write a `displayInventory` function that iterates over your hero's inventory and writes it to the page.
+//Add a couple of weapons to you hero's inventory to see if it works. Call it at the end of your script
+
+
+function displayInventory(hero) {
+  var inventElement = document.getElementById('invent');
+  for(var i = 0; i < hero['inventory'].length; i++) {
+  inventElement.innerText = (hero['inventory'][i])
+  }
+}//HARRY COMMENT - displayInventory is working with console.log (so I know it works), but creates an [object Object] error when passing to the innerText function.
+//have looked at Google explanations with no luck in time limit. : (
+
+//Write an `updateStats` function that calls `displayStats` and `displayInventory`.
+//Call `updateStats` when a picture is clicked in addition to the function that is already being called.
+
+function updateStats() {
+  displayStats(hero);
+  displayInventory(hero);
+}
+
+//Create a form that allow users to change the name of their hero.
+
+//function submitNameChange(hero) {
+//var heroSelection = inputField.value;
+//if (heroSelection !== hero.name) {
+//window.alert('Hero does not exist')}
+//HARRY COMMENT - this is as far as I managed to get in the time
