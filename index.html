@@ -5,14 +5,17 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>BB homework</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="BB homework_files/styles/style.css">
     </head>
     <body>
         <h1>Good luck! You can do it!</h1>
-        <a href="#" onclick="rest(hero); return false"><img src="images/Pub.williams.arp.750pix.jpg"></a>
-        <a href="#" onclick="pickUpItem(hero, {type: 'sword', damage:'80'}); return false"><img src="images/sword.jpg"></a>
-        <a href="#" onclick="doBattle(hero, {health: 67, weapon: {type: 'Slap', damage: 67}}); return false"><img src="images/enemy.jpeg"></a>
-        <a href="#" onclick="equipWeapon(hero, window.prompt('Which weapon would you like to equip?')); return false"><img src="images/BB homework_files/backpack.jpeg"></a>
+    <div class="image-links">
+        <a href="#" onclick="rest(hero); return false"><img src="BB homework_files/images/Pub.williams.arp.750pix.jpg"></a>
+        <a href="#" onclick="pickUpItem(hero, {type: 'sword', damage:'80'}); return false"><img src="BB homework_files/images/sword.jpg"></a>
+        <a href="#" onclick="doBattle(hero, {health: 67, weapon: {type: 'Slap', damage: 67}}); return false"><img src="BB homework_files/images/enemy.jpeg"></a>
+        <a href="#" onclick="equipWeapon(hero, window.prompt('Which weapon would you like to equip?')); return false"><img src="BB homework_files/images/backpack.jpeg"></a>
+    </div>
+    <div id="stats"></div>
         <script src="your_javascript_here.js"></script>
         <script src="tests.js"></script>
     </body>

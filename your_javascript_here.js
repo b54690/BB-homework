@@ -86,7 +86,7 @@ function doBattle(heroicCreature, creature) {
   if (heroicCreature.heroic !== true) {
     return null;
   }
-  while (heroicCreature.health > 0 && creature.health > 0) {
+  while (heroicCreature.health && creature.health > 0) {
     dealDamage(heroicCreature, creature);
     dealDamage(creature, heroicCreature);
   }
@@ -116,3 +116,12 @@ function doBattle(heroicCreature, creature) {
 //Add a picture of a backpack When it gets clicked by the user the `equipWeapon` function should get called with `hero` as the first argument.
 //The second argument should be `window.prompt()` that asks the user for the index of the weapon they want to equip.
 //Put a console.log in your code to verify that `doBattle` gets called correctly.
+
+//Link an external stylesheet and make all the pictures the same size.
+
+//Write `displayStats` function that writes your hero's name, health, weapontype, weapon damage to the page. Call it at the end of your script
+
+function displayStats(hero){
+  var linkElement = document.getElementById('stats');
+  linkElement.innerText = (`Name: ${hero.name}\nHealth: ${hero.health}\nWeapon Type: ${hero.weapon.type}\nWeapon Damage: ${hero.weapon.damage}`);
+}
