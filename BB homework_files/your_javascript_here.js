@@ -31,6 +31,7 @@ var creature = {
 function rest(creature) {
   creature.health = 10;
   return(creature);
+  console.log(creature);
 }
 
 //`pickUpItem` is a function that adds an item to the inventory of a creature
@@ -52,6 +53,14 @@ function pickUpItem(creature, item) {
 //3. return the `defender` object from this function.
 
 
+var heroicCreature = {
+  name: 'Lionel Lionheart',
+  heroic: true,
+  inventory: [],
+  health: 65,
+  weapon: {type: 'Slap', damage: 67},
+}
+
 function dealDamage(attacker, defender) {
   defender.health = defender.health - attacker.weapon.damage;
   return(defender);
@@ -66,10 +75,9 @@ function dealDamage(attacker, defender) {
 index = 0
 
 function equipWeapon(creature, index) {
-  creature.weapon = creature.inventory[index];
-  creature.inventory.shift(index);
+  var index = creature.inventory.shift();
+  creature.weapon.push(index);
   return(creature);
-  console.log(creature);
 }
 
 //HARRY COMMMENT!!!!!
@@ -92,13 +100,9 @@ function doBattle(heroicCreature, creature) {
   }
   if (heroicCreature.health > 0) {
     return heroicCreature.health;
-    console.log(heroicCreature.health);
   }
   else window.alert(`Heroic Creature has met his match : (`);
 }
-
-//HARRY COMMMENT!!!!!
-//window.alert result in a [object Object]
 
 // UI
 
@@ -108,11 +112,3 @@ function doBattle(heroicCreature, creature) {
 //Add a picture of a weapon to the page. When it is clicked by the user the `pickUpItem` should get called with `hero` as a first argument.
 //The second argument should be an object. The object should have a `type` key with a string value and a `damage` key with a number value (like a weapon object).
 //Put a console.log in your code to verify that `pickUpItem` gets called correctly.
-
-//Add a picture of an enemy to the page. When it gets clicked by the user the `doBattle` function should get called with `hero` as a first argument.
-//The second argument should be an object (the enemy). This object needs a `health` key with a number value and a `weapon` key which is an object.
-//This `weapon` object has a `damage` value which should be a number. Put a console.log in your code to verify that `doBattle` gets called correctly.
-
-//Add a picture of a backpack When it gets clicked by the user the `equipWeapon` function should get called with `hero` as the first argument.
-//The second argument should be `window.prompt()` that asks the user for the index of the weapon they want to equip.
-//Put a console.log in your code to verify that `doBattle` gets called correctly.
